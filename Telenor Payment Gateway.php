@@ -111,34 +111,6 @@ function init_custom_gateway_class(){
         }
 
 
-        public function payment_fields(){
-
-            if ( $description = $this->get_description() ) {
-                echo wpautop( wptexturize( $description ) );
-            }
-
-			$nonce = wp_create_nonce("telenor_user_nonce");
-
-            ?>
-            <div id="custom_input">
-                 <div style="padding: 0em; display: flex; flex-wrap: wrap;">
-						 <input style = "flex: 1 1 65%; box-sizing: border-box !important; margin-right: 0.5em;  margin-top: 0.3em; background-color: #F5F5F5;" type="text" class="" name="mobile" id="mobile" placeholder="03XXXXXXXXX" value="" >
-						<div id="telenor_get_code_skillsfirst" data-nonce="' . $nonce . '" style="flex: 1 1 25%; color:white; background-color: #0143A3; margin-right: 0.5em; margin-top: 0.3em; padding: 14px; font-family: Roboto; align-items: center; cursor: pointer; justify-content: center;"><span>Receive Code</span></div>
-                </div>
-				<p id="VerficationSentMessage" style="font-family: Roboto; padding-top: 0.2em; display: none; color: red;">
-					Please check your phone for verification code.
-				</p>
-				<div style = "margin-top: 0.5em; width: 100%; display: inline-flex; height: 50px;">
-                <p class="form-row form-row-wide">
-                    <input style="width: 99% ; box-sizing: border-box !important; margin-right: auto; background-color: #F5F5F5; " type="text" class="" name="transaction" id="transaction" placeholder="Pin Code" value="">
-                </p>
-				</div>
-            </div>
-            <?php
-			
-        }
-	
-	
 		public function payment_scripts() {
 
 			// we need JavaScript to process a token only on cart/checkout pages, right?
