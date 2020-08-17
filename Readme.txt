@@ -1,6 +1,6 @@
 === K2 Essentials ===
 Contributors: syedharis632, shahrukhx04, saadhamid
-Tags: Gutenberg, blocks, widgets, page builder
+Tags: Wordpress, Woocommerce, Essentials
 Requires at least: 5.2
 Tested up to: 5.4.1
 Requires PHP: 5.6
