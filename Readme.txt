@@ -1,4 +1,4 @@
-=== K2 Blocks ===
+=== K2 Essentials ===
 Contributors: syedharis632, shahrukhx04, saadhamid
 Tags: Gutenberg, blocks, widgets, page builder
 Requires at least: 5.2
