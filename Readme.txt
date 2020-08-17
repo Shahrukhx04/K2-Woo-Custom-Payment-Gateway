@@ -4,11 +4,11 @@ Tags: Gutenberg, blocks, widgets, page builder
 Requires at least: 5.2
 Tested up to: 5.4.1
 Requires PHP: 5.6
-Stable tag: 1.0.3
+Stable tag: 1.0.0
 License: GPL2+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
-K2 Essentials is an woocommerce custom payment gateway with dynamic fields and more user freedom.
+K2 Woo Custom Payment Gateway is an woocommerce custom payment gateway with dynamic fields and more user freedom.
 
 == Description ==
 Enhance your e-Commerce websites by adding custom payment options on your check out page! K2-Woo-Payment allows you to fully customize your payment options by adding
