@@ -54,10 +54,10 @@ K2-Woo-Gateway is compatible with all WooCommerce themes.
 
 
 == Screenshots ==
-1. `/assets/K2-Woo-Gateway-Screenshot-1.png`
-2. `/assets/K2-Woo-Gateway-Screenshot-2.png`
-3. `/assets/K2-Woo-Gateway-Screenshot-3.png`
-4. `/assets/K2-Woo-Gateway-Screenshot-4.png`
+1. `/assets/K2-custom-Gateway-Screenshot-1.png`
+2. `/assets/K2-custom-Gateway-Screenshot-2.png`
+3. `/assets/K2-custom-Gateway-Screenshot-3.png`
+4. `/assets/K2-custom-Gateway-Screenshot-4.png`
 
 
 == Changelog ==
