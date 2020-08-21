@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: K2-Woo Custom Payment Gateway
+ * Plugin Name: K2 Custom Payment Gateway for WooCommerce
  * Plugin URI: https://pookidevs.com
  * Description: Add Custom Payment Gateway on Woocommerce Checkout with custom fields.
  * Author: PookiDevs
