@@ -1,4 +1,4 @@
-=== K2 Woo Custom Payment Gateway ===
+=== K2 Custom Payment Gateway for WooCommerce ===
 Contributors: syedharis632, shahrukhx04, saadhamid
 Tags: Wordpress, Woocommerce, Essentials
 Requires at least: 5.2
