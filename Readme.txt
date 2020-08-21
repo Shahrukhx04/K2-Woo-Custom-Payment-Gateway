@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPL2+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
-K2 Woo Custom Payment Gateway is an woocommerce custom payment gateway with dynamic fields and more user freedom.
+K2 Custom Payment Gateway is an woocommerce custom payment gateway with dynamic fields and more user freedom.
 
 == Description ==
 Enhance your e-Commerce websites by adding custom payment options on your check out page! K2-Woo-Payment allows you to fully customize your payment options by adding
@@ -46,10 +46,10 @@ You can define your own order statuses. You can also choose what the order statu
 
 
 Q. Is this plugin free?
-Yes, K2-Woo-Gateway is completely FREE to download and use.
+Yes, K2 Custom Payment Gateway for WooCommerce is completely FREE to download and use.
 
 Q. Is this plugin limited to a certain theme?
-K2-Woo-Gateway is compatible with all WooCommerce themes.
+K2 Custom Payment Gateway for WooCommerce is compatible with all WooCommerce themes.
 
 
 
