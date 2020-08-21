@@ -15,17 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 // Add K2-Woo-Custom Payment Gateway in existing woocommerce gateway methods array
-add_filter( 'woocommerce_payment_gateways', 'add_custom_gateway_class' );
+add_filter( 'woocommerce_payment_gateways', 'K2CGP_add_custom_gateway_class' );
 
-function add_custom_gateway_class( $methods ) {
+function K2CGP_add_custom_gateway_class( $methods ) {
     $methods[] = 'WC_K2_Woo_Custom_Gateway_payment';
     return $methods;
 }
 
 
 // Define Custom Gateway Class & Implement Login
-add_action('plugins_loaded', 'init_custom_gateway_class');
-function init_custom_gateway_class(){
+add_action('plugins_loaded', 'K2CGP_init_custom_gateway_class');
+function K2CGP_init_custom_gateway_class(){
 
     class WC_K2_Woo_Custom_Gateway_payment extends WC_Payment_Gateway {
 
@@ -161,8 +161,8 @@ function init_custom_gateway_class(){
 
 
 
-add_action('woocommerce_checkout_process', 'process_custom_payment');
-function process_custom_payment(){
+add_action('woocommerce_checkout_process', 'K2CGP_process_custom_payment');
+function K2CGP_process_custom_payment(){
 	global $wpdb;
 
     if($_POST['payment_method'] != 'K2WooCustomPaymentGateway')
