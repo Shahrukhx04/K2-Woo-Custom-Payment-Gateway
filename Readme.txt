@@ -1,10 +1,10 @@
 === K2 Custom Payment Gateway for WooCommerce ===
-Contributors: syedharis632, shahrukhx04, saadhamid
+Contributors: syedharis632, shahrukhx04, hmumtaz1, saadhamid
 Tags: Wordpress, Woocommerce, Essentials
 Requires at least: 5.2
-Tested up to: 5.5
+Tested up to: 5.5.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.1
 License: GPL2+
 License URI: https://www.gnu.org/licenses/gpl-2.0.txt
 
@@ -63,7 +63,8 @@ K2 Custom Payment Gateway for WooCommerce is compatible with all WooCommerce the
 == Changelog ==
 = 1.0.0 =
 Initial release
-
+= 1.1 =
+Bug fixes
 
 == Development ==
 To contribute to this plugin head over to our [Github Repository](https://github.com/Shahrukhx04/K2-Woo-Custom-Payment-Gateway)

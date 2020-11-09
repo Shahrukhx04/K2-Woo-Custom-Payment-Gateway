@@ -1,11 +1,12 @@
 <?php
-/*
+/**
  * Plugin Name: K2 Custom Payment Gateway for WooCommerce
+ * @package K2Blocks
  * Plugin URI: https://pookidevs.com
  * Description: Add Custom Payment Gateway on Woocommerce Checkout with custom fields.
  * Author: PookiDevs
  * Author URI: http://pookidevs.com
- * Version: 1.0.0
+ * Version: 1.1
  *
 */
 
@@ -22,6 +23,23 @@ function K2CGP_add_custom_gateway_class( $methods ) {
     return $methods;
 }
 
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+}
+
+else{
+    add_action( 'admin_notices', 'admin_notice_missing_main_plugin' );
+    return;    
+}
+
+function admin_notice_missing_main_plugin() {
+    deactivate_plugins( plugin_basename(__FILE__) );
+    unset($_GET['activate']);
+            ?>
+        <div class="notice notice-error">
+            <p><strong>Plugin deactivated. WooCommerce not installed/activated</strong>.</p>
+        </div>
+        <?php
+}
 
 // Define Custom Gateway Class & Implement Login
 add_action('plugins_loaded', 'K2CGP_init_custom_gateway_class');
