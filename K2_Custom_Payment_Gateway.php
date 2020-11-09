@@ -56,7 +56,7 @@ function K2CGP_init_custom_gateway_class(){
 
             $this->domain = 'custom_payment';
 
-            $this->id                 = 'K2WooCustomPaymentGateway';
+            $this->id                 = 'k2woocustompaymentgateway';
             $this->icon               = apply_filters('woocommerce_custom_gateway_icon', '');
             $this->has_fields         = false;
             $this->method_title       = __( 'K2-Woo Custom Payment Gateway', $this->domain );
@@ -183,7 +183,7 @@ add_action('woocommerce_checkout_process', 'K2CGP_process_custom_payment');
 function K2CGP_process_custom_payment(){
 	global $wpdb;
 
-    if($_POST['payment_method'] != 'K2WooCustomPaymentGateway')
+    if($_POST['payment_method'] != 'k2woocustompaymentgateway')
         return;
 
 }
