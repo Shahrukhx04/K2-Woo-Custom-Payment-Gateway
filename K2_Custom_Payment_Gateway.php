@@ -70,7 +70,7 @@ function K2CGP_init_custom_gateway_class(){
             $this->title        = $this->get_option( 'title' );
             $this->description  = $this->get_option( 'description' );
             $this->order_status = $this->get_option( 'order_status', 'completed' );
-
+            $this->cust  = $this->get_option( 'custom-field-title', $this->description );
             // Actions
             
 			add_action( 'wp_enqueue_scripts', array( $this, 'payment_style_scripts' ) );
@@ -86,7 +86,7 @@ function K2CGP_init_custom_gateway_class(){
 			
 			
 			
-			add_action( 'wp_enqueue_scripts', array( $this, 'payment_scripts' ) );
+            add_action( 'wp_enqueue_scripts', array( $this, 'payment_scripts' ) );
 
         }
 
@@ -124,10 +124,17 @@ function K2CGP_init_custom_gateway_class(){
                     'description' => __( 'Enter the Title to show on the checkout page', $this->domain ),
                     'default'     => __('Checkout with K2-Woo Custom Payment Gateway with additional custom fields', $this->domain),
                     'desc_tip'    => true,
+                ),
+                'custom-field-title' => array(
+					'title' => 'Custom field title',
+					'description' => __('Adding title will enable a custom text input with that title.',$this->domain),
+					'type' => 'text',
+					'default' => 'Add your custom field title',
+					'desc_tip'    => true,
                 )
             );
         }
-
+        
 
 		public function payment_scripts() {
 
@@ -141,10 +148,24 @@ function K2CGP_init_custom_gateway_class(){
 				return;
 			}
 
-
 		}
 		
+        public function payment_fields(){
 
+            echo wpautop( wptexturize( $this->description ) );
+
+            if ( $this->cust != 'Add your custom field title' ) {
+                echo wpautop( wptexturize( $this->cust ) );            
+                ?>
+                <div id="custom_input">
+                    <div style="padding: 0em; display: flex; flex-wrap: wrap;">
+                            <input style = "flex: 1 1 65%; box-sizing: border-box !important; margin-right: 0.5em;  margin-top: 0.3em; background-color: #F5F5F5;" type="text" class="" name="custom-field" id="mobile" placeholder="Enter the <?= $this->cust ?>" value='' >
+                    </div>
+                </div>
+                <?php
+            }
+        }
+        
         /**
          * Process the payment and return the result.
          *
@@ -157,6 +178,9 @@ function K2CGP_init_custom_gateway_class(){
 
             $status = 'wc-' === substr( $this->order_status, 0, 3 ) ? substr( $this->order_status, 3 ) : $this->order_status;
 
+            if (!empty($_POST['custom-field'])) {
+                update_post_meta($order_id, $this->cust , sanitize_text_field($_POST['custom-field']));
+            }
             // Set order status
             $order->update_status( $status, __( 'Checkout with K2-Woo Custom Payment Gateway. ', $this->domain ) );
 
