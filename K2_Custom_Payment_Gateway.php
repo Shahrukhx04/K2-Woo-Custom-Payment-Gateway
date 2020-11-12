@@ -61,6 +61,7 @@ function K2CGP_init_custom_gateway_class(){
             $this->has_fields         = false;
             $this->method_title       = __( 'K2-Woo Custom Payment Gateway', $this->domain );
             $this->method_description = __( 'Description: Add Custom Payment Gateway on Woocommerce Checkout with custom fields.', $this->domain );
+            $this->show_field         = "Hidden";
 
             // Load the settings.
             $this->init_form_fields();
@@ -70,7 +71,7 @@ function K2CGP_init_custom_gateway_class(){
             $this->title        = $this->get_option( 'title' );
             $this->description  = $this->get_option( 'description' );
             $this->order_status = $this->get_option( 'order_status', 'completed' );
-            $this->cust  = $this->get_option( 'custom-field-title', $this->description );
+            $this->cust  = $this->get_option( 'custom-field-title' );
             // Actions
             
 			add_action( 'wp_enqueue_scripts', array( $this, 'payment_style_scripts' ) );
@@ -127,7 +128,7 @@ function K2CGP_init_custom_gateway_class(){
                 ),
                 'custom-field-title' => array(
 					'title' => 'Custom field title',
-					'description' => __('Adding title will enable a custom text input with that title.',$this->domain),
+					'description' => __('Adding title will enable a custom text input with that title.'),
 					'type' => 'text',
 					'default' => 'Add your custom field title',
 					'desc_tip'    => true,
@@ -154,16 +155,27 @@ function K2CGP_init_custom_gateway_class(){
 
             echo wpautop( wptexturize( $this->description ) );
 
-            if ( $this->cust != 'Add your custom field title' ) {
-                echo wpautop( wptexturize( $this->cust ) );            
+            if ( $this->cust != 'Add your custom field title' && !empty($this->cust)) {
+                echo wpautop( wptexturize( $this->cust ) );
+                $this->show_field = "text";   
                 ?>
                 <div id="custom_input">
                     <div style="padding: 0em; display: flex; flex-wrap: wrap;">
-                            <input style = "flex: 1 1 65%; box-sizing: border-box !important; margin-right: 0.5em;  margin-top: 0.3em; background-color: #F5F5F5;" type="text" class="" name="custom-field" id="mobile" placeholder="Enter the <?= $this->cust ?>" value='' >
+                            <input style = "flex: 1 1 65%; box-sizing: border-box !important; margin-right: 0.5em;  margin-top: 0.3em; background-color: #F5F5F5;" type="<?= $this->show_field ?>" class="" name="custom-field" id="mobile" placeholder="Enter the <?= $this->cust ?>" value='' >
                     </div>
                 </div>
                 <?php
             }
+            else{
+                ?>
+                <div id="custom_input">
+                <div style="padding: 0em; display: flex; flex-wrap: wrap;">
+                        <input style = "flex: 1 1 65%; box-sizing: border-box !important; margin-right: 0.5em;  margin-top: 0.3em; background-color: #F5F5F5;" type="Hidden" class="" name="custom-field" id="mobile" placeholder="Enter the <?= $this->cust ?>" value='' >
+                </div>
+                </div>
+                <?php
+            }
+            $this->show_field = "Hidden";
         }
         
         /**
