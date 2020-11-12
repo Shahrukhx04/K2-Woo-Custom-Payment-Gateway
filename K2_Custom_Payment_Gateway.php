@@ -6,7 +6,7 @@
  * Description: Add Custom Payment Gateway on Woocommerce Checkout with custom fields.
  * Author: PookiDevs
  * Author URI: http://pookidevs.com
- * Version: 1.1
+ * Version: 1.2
  *
 */
 
